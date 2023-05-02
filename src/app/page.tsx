@@ -10,7 +10,7 @@ import mainImage from "./../images/main.webp";
 export default function Home() {
     return (
         <SMain>
-            <SMainImage src={mainImage.src} alt="mainImage" />
+            <SMainImage src={mainImage.src} width={960} height={720} alt="mainImage" />
             <Information marginTop="" displayNum={3} />
             {/* <LinkButton page="/Information">もっと見る</LinkButton> */}
             <About marginTop="" displayNum={1} />
