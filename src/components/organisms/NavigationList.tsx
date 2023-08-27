@@ -1,7 +1,9 @@
-"use client";
-import styled from "styled-components";
-import { navList } from "../Header";
+// next
 import Link from "next/link";
+// style
+import styles from "./NavigationList.module.scss";
+// components
+import { navList } from "../Header";
 
 type Props = {
     navList: typeof navList;
@@ -10,7 +12,7 @@ type Props = {
 
 export const NavigationList = ({ navList, callback }: Props) => {
     return (
-        <SNav>
+        <nav className={styles.nav}>
             <ul>
                 {navList.map((item, index) => (
                     <li key={index}>
@@ -20,25 +22,6 @@ export const NavigationList = ({ navList, callback }: Props) => {
                     </li>
                 ))}
             </ul>
-        </SNav>
+        </nav>
     );
 };
-
-const SNav = styled.nav`
-    ul {
-        display: flex;
-        @media screen and (max-width: 767px) {
-            display: block;
-            text-align: center;
-        }
-    }
-    li {
-        margin-left: 20px;
-        margin-right: 20px;
-        margin-top: auto;
-        margin-bottom: auto;
-        @media screen and (max-width: 767px) {
-            margin-top: 20px;
-        }
-    }
-`;

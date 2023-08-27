@@ -1,0 +1,54 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15rem;
+    background: url("../images/banner_big.png"); /* 画像のパスを適切に指定 */
+    background-size: cover;
+    @media screen and (max-width: 767px) {
+        height: 4.2rem;
+    }
+}
+
+.header_container {
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.menu_button {
+    display: none;
+    margin-right: 1rem;
+    @media screen and (max-width: 767px) {
+        display: inline;
+        width: 44px;
+        height: 34px;
+        vertical-align: middle;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        outline: none;
+    }
+}
+
+.menu {
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+.menu_active {
+    @media screen and (max-width: 767px) {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        color: #ffffff;
+        background-color: #5db0cb;
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+}

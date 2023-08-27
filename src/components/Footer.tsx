@@ -1,26 +1,12 @@
-"use client";
+// react
 import React from "react";
-import styled from "styled-components";
+// style
+import styles from "./Footer.module.scss";
 
 export const Footer = () => {
     return (
-        <SFooter>
-            <SCopy>
-                <small>&copy;善福寺 All Rights Reserved.</small>
-            </SCopy>
-        </SFooter>
+        <footer className={styles.footer}>
+            <small className={styles.copy}>&copy;TFTFans All Rights Reserved.</small>
+        </footer>
     );
 };
-
-const SFooter = styled.footer`
-    color: #ffffff;
-    background-color: #1b813e;
-    margin-top: 60px;
-`;
-
-const SCopy = styled.p`
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-`;
