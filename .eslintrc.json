@@ -5,7 +5,13 @@
         // "node": true,
         // "browser": true
     },
-    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier", "next"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "next",
+        "plugin:storybook/recommended"
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "sourceType": "module",
