@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 "use client";
 // react
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // next.js
 import Link from "next/link";
 import Image from "next/image";
@@ -11,6 +11,7 @@ import styles from "./Header.module.scss";
 import IconImage from "../images/icon.png";
 import BannerImage from "../images/banner.png";
 import MenuIconImage from "../images/icon-menu.png";
+import LogoImage from "../images/logo_transparent.png";
 // components
 import { NavigationList } from "./organisms/NavigationList";
 
@@ -33,26 +34,101 @@ export const Header = () => {
         scrollToTop();
     };
 
-    const menuBtnToggle = () => {
+    const toggleMenu = () => {
         setMenuActive(!menuActive);
-        scrollToTop();
     };
 
+    useEffect(() => {
+        if (menuActive) {
+            document.body.style.overflow = "hidden";
+        }
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [menuActive]);
+
     return (
-        <header className={styles.header}>
-            <div className={styles.header_container}>
-                <button className={styles.menu_button} onClick={menuBtnToggle}>
-                    <Image src={MenuIconImage.src} width={44} height={34} alt="メニュー" />
-                </button>
-            </div>
+        <header className={styles.Header}>
+            <Image
+                src={LogoImage.src}
+                width={180}
+                height={60}
+                alt="logo"
+                priority={true}
+                className={styles.LogoImage}
+            />
             {menuActive ? (
-                <div className={styles.menu_active}>
-                    <NavigationList navList={navList} callback={menuBtnToggle} />
-                </div>
+                <>
+                    <button onClick={toggleMenu} className={styles.ButtonIsOpen}>
+                        <div className={styles.ButtonLineTop}></div>
+                        <div className={styles.ButtonLineMedium}></div>
+                        <div className={styles.ButtonLineBottom}></div>
+                    </button>
+                    <nav className={styles.MenuIsOpen}>
+                        <div className={styles.MenuHeader}>MENU</div>
+                        <ul className={styles.MenuList}>
+                            <li className={styles.MenuListItem}>
+                                <Link href={"/"} onClick={() => {}} className={styles.MenuListItemLink}>
+                                    構成一覧
+                                </Link>
+                            </li>
+                            <li className={styles.MenuListItem}>
+                                <Link href={"/"} onClick={() => {}} className={styles.MenuListItemLink}>
+                                    構成投稿
+                                </Link>
+                            </li>
+                            <li className={styles.MenuListItem}>
+                                <Link href={"/"} onClick={() => {}} className={styles.MenuListItemLink}>
+                                    問い合わせ
+                                </Link>
+                            </li>
+                            {/* {navList.map((item, index) => (
+                        <li key={index} className={styles.MenuListItem}>
+                            <Link href={item.link} onClick={menuBtnToggle} className={styles.MenuListItemLink}>
+                                {item.body}
+                            </Link>
+                        </li>
+                    ))} */}
+                        </ul>
+                    </nav>
+                    <div className={styles.OverlayIsOpen} />
+                </>
             ) : (
-                <div className={styles.menu}>
-                    <NavigationList navList={navList} callback={() => {}} />
-                </div>
+                <>
+                    <button onClick={toggleMenu} className={styles.Button}>
+                        <div className={styles.ButtonLineTop}></div>
+                        <div className={styles.ButtonLineMedium}></div>
+                        <div className={styles.ButtonLineBottom}></div>
+                    </button>
+                    <nav className={styles.Menu}>
+                        <div className={styles.MenuHeader}>MENU</div>
+                        <ul className={styles.MenuList}>
+                            <li className={styles.MenuListItem}>
+                                <Link href={"/"} onClick={() => {}} className={styles.MenuListItemLink}>
+                                    構成一覧
+                                </Link>
+                            </li>
+                            <li className={styles.MenuListItem}>
+                                <Link href={"/"} onClick={() => {}} className={styles.MenuListItemLink}>
+                                    構成投稿
+                                </Link>
+                            </li>
+                            <li className={styles.MenuListItem}>
+                                <Link href={"/"} onClick={() => {}} className={styles.MenuListItemLink}>
+                                    問い合わせ
+                                </Link>
+                            </li>
+                            {/* {navList.map((item, index) => (
+                        <li key={index} className={styles.MenuListItem}>
+                            <Link href={item.link} onClick={menuBtnToggle} className={styles.MenuListItemLink}>
+                                {item.body}
+                            </Link>
+                        </li>
+                    ))} */}
+                        </ul>
+                    </nav>
+                    <div className={styles.Overlay} />
+                </>
             )}
         </header>
     );

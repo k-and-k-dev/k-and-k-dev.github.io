@@ -12,16 +12,18 @@ type Props = {
 
 export const NavigationList = ({ navList, callback }: Props) => {
     return (
-        <nav className={styles.nav}>
-            <ul>
-                {navList.map((item, index) => (
-                    <li key={index}>
-                        <Link href={item.link} onClick={callback}>
-                            {item.body}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+        <nav className={styles.Menu}>
+            <div className={styles.MenuHeader}>
+                <ul className={styles.MenuList}>
+                    {navList.map((item, index) => (
+                        <li key={index} className={styles.MenuListItem}>
+                            <Link href={item.link} onClick={callback} className={styles.MenuListItemLintk}>
+                                {item.body}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </nav>
     );
 };

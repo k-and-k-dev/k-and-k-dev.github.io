@@ -1,4 +1,5 @@
 // sytle
+import "./global.css";
 import "./layout.module.scss";
 // components
 import { Header } from "@/components/Header";
