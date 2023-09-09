@@ -1,0 +1,29 @@
+.label {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.label::after {
+    position: absolute;
+    right: 15px;
+    width: 10px;
+    height: 7px;
+    background-color: #535353;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    content: "";
+    pointer-events: none;
+}
+
+.label select {
+    appearance: none;
+    min-width: 130px;
+    height: 2.2em;
+    padding: 0.4em calc(0.8em + 30px) 0.4em 0.8em;
+    border: 1px solid #cccccc;
+    // border-radius: 3px;
+    background-color: #fff;
+    color: #333333;
+    font-size: 1rem;
+    cursor: pointer;
+}

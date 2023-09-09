@@ -1,16 +1,46 @@
 .Main {
     width: 100%;
     margin-top: 60px;
-    padding-top: 12px;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-bottom: 32px;
-    background-color: #f4ffff;
+    background-color: #ffffff;
 }
 
-.Section {
-    margin-top: 20px;
+.headline_comp {
+    font-weight: 600;
+}
+
+.comp_ui {
+    display: grid;
+    margin-bottom: 1rem;
+}
+
+.filter_sort {
+    display: grid;
+    grid-row: 1;
+    grid-column: 1;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.selectbox_filter {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.selectbox_sort {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.button_post {
+    grid-row: 1;
+    grid-column: 2;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.button_post button {
     width: 100%;
-    height: 400px;
-    background-color: lightblue;
+    height: 100%;
+    text-align: center;
+    font-size: 1.5rem;
 }

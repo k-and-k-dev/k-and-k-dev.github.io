@@ -8,9 +8,6 @@ import Image from "next/image";
 // style
 import styles from "./Header.module.scss";
 // images
-import IconImage from "../images/icon.png";
-import BannerImage from "../images/banner.png";
-import MenuIconImage from "../images/icon-menu.png";
 import LogoImage from "../images/logo_transparent.png";
 // components
 import { NavigationList } from "./organisms/NavigationList";
@@ -29,10 +26,6 @@ export const navList = [
 
 export const Header = () => {
     const [menuActive, setMenuActive] = useState(false);
-
-    const logoBtnToggle = () => {
-        scrollToTop();
-    };
 
     const toggleMenu = () => {
         setMenuActive(!menuActive);
@@ -58,6 +51,7 @@ export const Header = () => {
                 className={styles.LogoImage}
             />
             {menuActive ? (
+                // メニューオープン時
                 <>
                     <button onClick={toggleMenu} className={styles.ButtonIsOpen}>
                         <div className={styles.ButtonLineTop}></div>
@@ -94,6 +88,7 @@ export const Header = () => {
                     <div className={styles.OverlayIsOpen} />
                 </>
             ) : (
+                // メニュークローズ時
                 <>
                     <button onClick={toggleMenu} className={styles.Button}>
                         <div className={styles.ButtonLineTop}></div>
