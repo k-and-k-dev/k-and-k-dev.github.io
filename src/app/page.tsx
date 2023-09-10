@@ -26,8 +26,10 @@ export default function Home() {
             </div>
             <Accordion
                 label="スレイヤーグウェン"
-                content="ああああああああああああああああ"
+                content="ああああああああああああああああああああああああああああああああああああああ"
+                borderColor="#66a6ff"
                 backgroundColor="#f4ffff"
+                labelColor="#333333"
             />
         </main>
     );

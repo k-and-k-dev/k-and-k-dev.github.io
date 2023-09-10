@@ -16,16 +16,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Red: Story = {
+export const Default: Story = {
     args: {
-        label: "Headline",
+        label: "構成一覧",
         borderColor: "#ee2560",
-    },
-};
-
-export const Blue: Story = {
-    args: {
-        label: "Headline",
-        borderColor: "#66a6ff",
     },
 };

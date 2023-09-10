@@ -20,13 +20,13 @@ type Story = StoryObj<typeof meta>;
 export const Large: Story = {
     args: {
         size: "large",
-        label: "GradationButton",
+        label: "構成投稿",
     },
 };
 
 export const Small: Story = {
     args: {
         size: "small",
-        label: "GradationButton",
+        label: "構成投稿",
     },
 };

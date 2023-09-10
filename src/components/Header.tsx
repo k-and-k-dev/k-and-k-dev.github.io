@@ -10,7 +10,7 @@ import styles from "./Header.module.scss";
 // images
 import LogoImage from "../images/logo_transparent.png";
 // components
-import { NavigationList } from "./organisms/NavigationList";
+// import { NavigationList } from "./organisms/NavigationList";
 
 export const scrollToTop = () => {
     window.scrollTo({

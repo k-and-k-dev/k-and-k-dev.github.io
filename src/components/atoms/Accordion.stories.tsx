@@ -9,25 +9,21 @@ const meta = {
     },
     tags: ["autodocs"],
     argTypes: {
+        borderColor: { control: "color" },
         backgroundColor: { control: "color" },
+        labelColor: { control: "color" },
     },
 } satisfies Meta<typeof Accordion>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Red: Story = {
+export const Default: Story = {
     args: {
         label: "Accordion",
-        content: "見出し風のアコーディオンメニュー",
-        backgroundColor: "#ff0000",
-    },
-};
-
-export const Blue: Story = {
-    args: {
-        label: "Accordion",
-        content: "見出し風のアコーディオンメニュー",
-        backgroundColor: "#0000ff",
+        content: `見出し風アコーディオンメニュー`,
+        borderColor: "#66a6ff",
+        backgroundColor: "#f4ffff",
+        labelColor: "#000000",
     },
 };

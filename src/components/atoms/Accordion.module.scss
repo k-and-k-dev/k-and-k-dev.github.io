@@ -1,5 +1,6 @@
 .details {
     min-width: 20rem;
+    border-left: 0.5rem solid #ff0000;
 }
 
 .details:not([open]) {
@@ -12,8 +13,6 @@
     align-items: center;
     position: relative;
     padding: 0.5rem 1rem;
-    border-left: 0.5rem solid #66a6ff;
-    color: #333333;
     font-weight: 600;
     cursor: pointer;
 }
@@ -43,7 +42,6 @@
     opacity: 0;
     margin: 0;
     padding: 1em 2em 2em 2em;
-    color: #333333;
     transition: transform 0.5s, opacity 0.5s;
 }
 
@@ -119,13 +117,4 @@ details[open] .summary_inner::after {
     to {
         transform: rotate(180deg);
     }
-}
-
-/* --------アコーディオンの中身のスタイル-------- */
-.content {
-    background-color: #f0f2ff;
-    padding: 24px 48px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
 }
